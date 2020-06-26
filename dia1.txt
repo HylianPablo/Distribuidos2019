@@ -1,0 +1,8 @@
+theads -> (thread,runnable)
+locks -> (semaphores,mutes...syncronized (que sustituye a class))
+esperas -> (wait(),notify())
+
+----------------
+Por defecto todos los programas java son multihenebrados, en torno a un hilo principal. Con otras herramientas (awk i.e.) se generan más hilos.
+
+Todo objeto java por defecto tiene un semáforo interno (mutex).

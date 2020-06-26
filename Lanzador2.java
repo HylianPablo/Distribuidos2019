@@ -1,0 +1,12 @@
+package ejemplo.Servidor;
+
+public class Lanzador2 {
+    public static void main(String[] args) {
+        ColaStrings cola = new ColaStrings() ;
+        Runnable genera = new Productor(cola) ;
+        Runnable come = new Consumidor(cola) ;
+
+        new Thread(genera).start();
+        new Thread(come).start();
+    }
+}

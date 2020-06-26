@@ -1,0 +1,22 @@
+Certificado del servidor:
+
+keytool -genkey -alias SecureServer -keyalg RSA -keystore Server_Keystore.jks
+
+Comprobación:
+
+keytool -list -v -keystore Server_Keystore.jks
+
+Exportación:
+
+keytool -export -alias SecureServer -keystore Server_Keystore.jks -rfc -file Server.cer
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Certificado del cliente:
+
+keytool -import -alias SecureServer -file Server.cer -keystore Client_Truststore.jks 
+
+Comprobación:
+
+keytool -list -v -keystore Client_Truststore.jks
+
